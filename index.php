@@ -1,12 +1,13 @@
 <?php
 $res = 0;
-for($no = 0;$no < 1000;$no++) {
+$simulations = 10000;
+for($no = 0;$no < $simulations;$no++) {
    // Single Simulation //
 
    $people = array();
 
-    for($i = 0;$i < 100;$i++) {
-        $daterange = mt_rand(820454400,823132800);
+    for($i = 0;$i < 23;$i++) {
+        $daterange = mt_rand(0,365);
         $people[] = $daterange;
     }
     //
@@ -17,6 +18,8 @@ for($no = 0;$no < 1000;$no++) {
     for($i = 0;$i < count($people);$i++) {
         //print $people[$i] . PHP_EOL;
         $temp = $people;
+		//print_r($people);
+		//print_r($temp);
         unset($temp[$i]);
 
         if(in_array($people[$i],$temp)) {
@@ -35,5 +38,5 @@ for($no = 0;$no < 1000;$no++) {
         $res++;
     }
 }
-print $res . PHP_EOL;
-print $res / 1000 * 100 . "%";
+print "Broj simulacija u kojima je pronadjeno poklapanje:" . $res . PHP_EOL;
+print $res / 10000 * 100 . "%";
