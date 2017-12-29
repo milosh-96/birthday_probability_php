@@ -7,7 +7,7 @@ for($no = 0;$no < $simulations;$no++) {
    $people = array();
 
     for($i = 0;$i < 23;$i++) {
-        $daterange = mt_rand(0,365);
+        $daterange = mt_rand(0,364);
         $people[] = $daterange;
     }
     //
