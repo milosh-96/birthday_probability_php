@@ -38,5 +38,5 @@ for($no = 0;$no < $simulations;$no++) {
         $res++;
     }
 }
-print "Broj simulacija u kojima je pronadjeno poklapanje:" . $res . PHP_EOL;
+print "Number of simulations with matches:" . $res . PHP_EOL;
 print $res / 10000 * 100 . "%";
